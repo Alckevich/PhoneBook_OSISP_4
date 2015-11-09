@@ -1,0 +1,10 @@
+253-36-01;Jhon;Dow;Jackson;Terbatas;85;2;101
+365-12-12;LENE;ORVIK;Jane;Allen Street;12;2;106
+966-23-14;Peter;Wild;Pan;Ann Street;11;1;356
+367-32-45;Jerry;Black;James;Bogardus Street;18;2;46
+987-82-89;Charles;Gray;Charly;Delancey Street;2;4;5
+347-19-45;Juan;White;Bella;Horatio Street;89;2;85
+124-29-34;Henry;Danom;Brayn;ALaGuardia Place;19;4;1
+456-31-12;Logun;Black;James;Frogman Street;10;3;12
+987-82-89;Chak;White;Charly;Columbus Street;12;2;7
+354-14-11;Juan;White;Hugo;Irving Place;10;2;22
