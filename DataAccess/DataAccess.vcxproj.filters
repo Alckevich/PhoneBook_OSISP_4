@@ -24,25 +24,25 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\BinaryTreeSeeker.h">
+    <ClInclude Include="BinaryTreeSeeker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\DbBinTreeBuilder.h">
+    <ClInclude Include="PhoneBookDataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\DbNode.h">
+    <ClInclude Include="PhoneBookTxtParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\Entry.h">
+    <ClInclude Include="DbBinTreeBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\PhoneBookDataBase.h">
+    <ClInclude Include="DbNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\PhoneBookTxtParser.h">
+    <ClInclude Include="StringComparer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Osisp_laba_4\StringComparer.h">
+    <ClInclude Include="Entry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,22 +56,22 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Osisp_laba_4\BinaryTreeSeeker.cpp">
+    <ClCompile Include="BinaryTreeSeeker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Osisp_laba_4\DbBinTreeBuilder.cpp">
+    <ClCompile Include="PhoneBookDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Osisp_laba_4\DbNode.cpp">
+    <ClCompile Include="PhoneBookTxtParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Osisp_laba_4\PhoneBookDataBase.cpp">
+    <ClCompile Include="DbBinTreeBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Osisp_laba_4\PhoneBookTxtParser.cpp">
+    <ClCompile Include="DbNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Osisp_laba_4\StringComparer.cpp">
+    <ClCompile Include="StringComparer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
