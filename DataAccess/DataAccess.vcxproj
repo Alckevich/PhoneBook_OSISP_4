@@ -79,13 +79,23 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entry.h" />
-    <ClInclude Include="PhoneBookDataBase.h" />
-    <ClInclude Include="PhoneBookRepository.h" />
+    <ClInclude Include="..\Osisp_laba_4\BinaryTreeSeeker.h" />
+    <ClInclude Include="..\Osisp_laba_4\DbBinTreeBuilder.h" />
+    <ClInclude Include="..\Osisp_laba_4\DbNode.h" />
+    <ClInclude Include="..\Osisp_laba_4\Entry.h" />
+    <ClInclude Include="..\Osisp_laba_4\PhoneBookDataBase.h" />
+    <ClInclude Include="..\Osisp_laba_4\PhoneBookTxtParser.h" />
+    <ClInclude Include="..\Osisp_laba_4\StringComparer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Osisp_laba_4\BinaryTreeSeeker.cpp" />
+    <ClCompile Include="..\Osisp_laba_4\DbBinTreeBuilder.cpp" />
+    <ClCompile Include="..\Osisp_laba_4\DbNode.cpp" />
+    <ClCompile Include="..\Osisp_laba_4\PhoneBookDataBase.cpp" />
+    <ClCompile Include="..\Osisp_laba_4\PhoneBookTxtParser.cpp" />
+    <ClCompile Include="..\Osisp_laba_4\StringComparer.cpp" />
     <ClCompile Include="DataAccess.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -95,8 +105,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="PhoneBookDataBase.cpp" />
-    <ClCompile Include="PhoneBookRepository.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

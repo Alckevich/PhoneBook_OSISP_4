@@ -5,7 +5,7 @@
 #include "DbBinTreeBuilder.h"
 #include "BinaryTreeSeeker.h"
 
-class PhoneBookDataBase
+class __declspec(dllexport) PhoneBookDataBase
 {
 public:
 	static void Initialize(const char*);

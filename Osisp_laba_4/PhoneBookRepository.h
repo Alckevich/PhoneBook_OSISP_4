@@ -1,6 +1,10 @@
 #pragma once
-#include "PhoneBookDataBase.h"
 #include "Entry.h"
+#include <vector>
+
+typedef void(*INITFUNC)(const char*);
+typedef void(*SEEKFUNC)(std::string, std::vector<ENTRY>*);
+typedef void(*GETFUNC)(std::vector<ENTRY>*);
 
 class PhoneBookRepository
 {
@@ -12,5 +16,9 @@ public:
 	PhoneBookRepository();
 	~PhoneBookRepository();
 private:
+	HMODULE hDbLib;
+	INITFUNC DbInit;
+	SEEKFUNC DbFindByLastName;
+	GETFUNC DbGet;
 };
 

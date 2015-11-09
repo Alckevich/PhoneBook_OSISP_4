@@ -30,28 +30,7 @@
     <ClInclude Include="Osisp_laba_4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PhoneBookDataBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PhoneBookRepository.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PhoneBookTxtParser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StringComparer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DbNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DbBinTreeBuilder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryTreeSeeker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,25 +41,7 @@
     <ClCompile Include="Osisp_laba_4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PhoneBookDataBase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PhoneBookRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PhoneBookTxtParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StringComparer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DbNode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DbBinTreeBuilder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryTreeSeeker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
