@@ -10,8 +10,14 @@ PhoneBookDataBase::PhoneBookDataBase(const char* fileName)
 	parser = new PhoneBookTxtParser(fileName);
 	parser->Parse(&dbEntries);
 
-	DbBinTreeBuilder treeBuilder(&dbEntries);
-	treeBuilder.Build(&root);
+	DbBinTreeBuilder lastNameTreeBuilder(&dbEntries, [](ENTRY* a, ENTRY* b){ return StringComparer::icompare(a->lastname, b->lastname) >= 0; });
+	lastNameTreeBuilder.Build(&lastNameRoot);
+
+	DbBinTreeBuilder phoneTreeBuilder(&dbEntries, [](ENTRY* a, ENTRY* b){ return StringComparer::icompare(a->phone, b->phone) >= 0; });
+	phoneTreeBuilder.Build(&phoneRoot);
+
+	DbBinTreeBuilder addressTreeBuilder(&dbEntries, [](ENTRY* a, ENTRY* b){ return StringComparer::icompare(a->street, b->street) >= 0; });
+	addressTreeBuilder.Build(&addressRoot);
 }
 
 void PhoneBookDataBase::Initialize(const char* fileName)
@@ -21,29 +27,19 @@ void PhoneBookDataBase::Initialize(const char* fileName)
 	}
 }
 
-void PhoneBookDataBase::FindByPhone(std::string name, std::vector<ENTRY>* entries){
-	entries->clear();
-	for (int i = 0; i < instance->dbEntries.size(); i++){
-		if (StringComparer::iequal(instance->dbEntries[i].name, name)){
-			entries->push_back(instance->dbEntries[i]);
-		}
-	}
-}
-
-void PhoneBookDataBase::FindByStreet(std::string street, std::vector<ENTRY>* entries){
-	entries->clear();
-	for (int i = 0; i < instance->dbEntries.size(); i++){
-		if (StringComparer::iequal(instance->dbEntries[i].street, street)){
-			entries->push_back(instance->dbEntries[i]);
-		}
-	}
-}
-
 void PhoneBookDataBase::FindByLastName(std::string lastName, std::vector<ENTRY>* entries){
 	entries->clear();
-	ENTRY entry;
-	BinaryTreeSeeker::Seek(instance->root, &entry, lastName);
-	entries->push_back(entry);
+	BinaryTreeSeeker::Seek(instance->lastNameRoot, entries, [=](ENTRY* a){ return StringComparer::icompare(lastName, a->lastname); });
+}
+
+void PhoneBookDataBase::FindPhone(std::string phone, std::vector<ENTRY>* entries){
+	entries->clear();
+	BinaryTreeSeeker::Seek(instance->phoneRoot, entries, [=](ENTRY* a){ return StringComparer::icompare(phone, a->phone); });
+}
+
+void PhoneBookDataBase::FindByAddress(std::string address, std::vector<ENTRY>* entries){
+	entries->clear();
+	BinaryTreeSeeker::Seek(instance->addressRoot, entries, [=](ENTRY* a){ return StringComparer::icompare(address, a->street); });
 }
 
 void PhoneBookDataBase::Get(std::vector<ENTRY>* entries){

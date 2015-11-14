@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "DbNode.h"
 
-
 DbNode::DbNode()
 {
 }

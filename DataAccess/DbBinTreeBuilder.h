@@ -7,11 +7,12 @@
 class DbBinTreeBuilder
 {
 public:
-	DbBinTreeBuilder(std::vector<ENTRY>* entries);
+	DbBinTreeBuilder(std::vector<ENTRY>* entries, PREDICATE predicate);
 	void Build(DbNode** root);
 	~DbBinTreeBuilder();
 private:
 	std::vector<ENTRY>* entries;
 	void insert(DbNode** root, ENTRY* entry);
+	PREDICATE predicate;
 };
 
