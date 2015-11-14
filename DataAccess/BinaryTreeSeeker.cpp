@@ -7,18 +7,19 @@ BinaryTreeSeeker::BinaryTreeSeeker()
 {
 }
 
-BOOL BinaryTreeSeeker::Seek(DbNode* root, ENTRY* entry, std::string lastName){
+BOOL BinaryTreeSeeker::Seek(DbNode* root, std::vector<ENTRY>* entries, COMPAREFUNC compareFunc){
 	if (!(root)) {
 		return false;
 	}
-	if (StringComparer::icompare(lastName, root->lpData->lastname) < 0){
-		return Seek(root->lpLeftChild, entry, lastName);
+	if (compareFunc(root->lpData) < 0){
+		return Seek(root->lpLeftChild, entries, compareFunc);
 	}
-	else if (StringComparer::icompare(lastName, root->lpData->lastname) > 0){
-		return Seek(root->lpRightChild, entry, lastName);
+	else if (compareFunc(root->lpData) > 0){
+		return Seek(root->lpRightChild, entries, compareFunc);
 	}
 	else{
-		(*entry) = (*root->lpData);
+		entries->push_back(*root->lpData);
+		Seek(root->lpRightChild, entries, compareFunc);
 		return true;
 	}
 }

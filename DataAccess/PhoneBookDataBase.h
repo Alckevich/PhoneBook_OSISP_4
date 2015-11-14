@@ -9,9 +9,9 @@ class __declspec(dllexport) PhoneBookDataBase
 {
 public:
 	static void Initialize(const char*);
-	static void FindByPhone(std::string name, std::vector<ENTRY>* entries);
-	static void FindByStreet(std::string street, std::vector<ENTRY>* entries);
-	static void FindByLastName(std::string lastName, std::vector<ENTRY>* entries);
+	static void FindByLastName(std::string name, std::vector<ENTRY>* entries);
+	static void FindPhone(std::string phone, std::vector<ENTRY>* entries);
+	static void FindByAddress(std::string address, std::vector<ENTRY>* entries);
 	static void Get(std::vector<ENTRY>* entries);
 	~PhoneBookDataBase();
 private:
@@ -19,6 +19,8 @@ private:
 	std::vector<ENTRY> dbEntries;
 	static PhoneBookDataBase* instance;
 	PhoneBookTxtParser* parser;
-	DbNode* root;
+	DbNode* lastNameRoot;
+	DbNode* phoneRoot;
+	DbNode* addressRoot;
 };
 

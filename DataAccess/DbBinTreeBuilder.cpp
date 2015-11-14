@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "DbBinTreeBuilder.h"
 
-
-DbBinTreeBuilder::DbBinTreeBuilder(std::vector<ENTRY>* enries){
+DbBinTreeBuilder::DbBinTreeBuilder(std::vector<ENTRY>* enries, PREDICATE predicate){
 	this->entries = enries;
+	this->predicate = predicate;
 }
 
 void DbBinTreeBuilder::Build(DbNode** root){
@@ -20,11 +20,12 @@ void DbBinTreeBuilder::insert(DbNode** root, ENTRY* entry){
 		*root = new DbNode(entry);
 		return;
 	}
-	if (StringComparer::icompare(entry->lastname, (*root)->lpData->lastname) < 0){
-		insert(&(*root)->lpLeftChild, entry);
-	}
-	else if (StringComparer::icompare(entry->lastname, (*root)->lpData->lastname) >= 0){
+
+	if (predicate(entry, (*root)->lpData)){
 		insert(&(*root)->lpRightChild, entry);
+	}
+	else{
+		insert(&(*root)->lpLeftChild, entry);
 	}
 }
 

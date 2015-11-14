@@ -1,9 +1,6 @@
 #pragma once
-
 #include <string>
-
-#define PHONE_DB_MAX_LEN	30
-
+#include <functional>
 
 typedef struct PHONEBOOK_ENTRY {
 	std::string phone;
@@ -16,3 +13,5 @@ typedef struct PHONEBOOK_ENTRY {
 	std::string apartment;
 } ENTRY;
 
+typedef std::function<bool(ENTRY*, ENTRY*)> PREDICATE;
+typedef std::function<int(ENTRY*)> COMPAREFUNC;
