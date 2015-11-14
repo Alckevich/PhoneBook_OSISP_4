@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "Osisp_laba_4.h"
 #include <sstream>
+#include <string>
 
 #define MAX_LOADSTRING 100
 
@@ -30,7 +31,7 @@ HWND hListBox;
 
 std::vector<ENTRY> entries;
 
-PhoneBookRepository phoneBookRepository;
+PhoneBookService phoneBookService;
 
 // Global Variables:
 HINSTANCE hInst;								// current instance
@@ -310,18 +311,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-BOOL isNullOrEmpty(char* a){
-	if (a == NULL){
-		return true;
-	}
-
-	if (a[0] == '\0'){
-		return true;
-	}
-
-	return false;
-}
-
 void DisplayAllEntries(){
 	LoadPhoneBook();
 	DisplayEntries();
@@ -346,17 +335,23 @@ void DisplayEntry(int index){
 
 void ApplyFilter(){
 	char buff[1024];
+	
+	LoadPhoneBook();
 
 	GetWindowTextA(hLastNameEdit, buff, 1024);
-	if (!isNullOrEmpty(buff)){
-		phoneBookRepository.FindByLastName(buff, &entries);
-	}
+	auto lastName = std::string(buff);
+	GetWindowTextA(hAddressEdit, buff, 1024);
+	auto address = std::string(buff);
+	GetWindowTextA(hPhoneEdit, buff, 1024);
+	auto phone = std::string(buff);
+	
+	phoneBookService.GetEntries(lastName, phone, address, &entries);
 	
 	DisplayEntries();
 }
 
 void LoadPhoneBook(){
-	phoneBookRepository.Get(&entries);
+	phoneBookService.GetAllEntries(&entries);
 }
 
 void DisplayEntries(){
